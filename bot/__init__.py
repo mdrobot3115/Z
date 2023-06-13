@@ -74,7 +74,7 @@ bot_id = BOT_TOKEN.split(':', 1)[0]
 
 DATABASE_URL = environ.get('DATABASE_URL', '')
 if len(DATABASE_URL) == 0:
-    DATABASE_URL = 'mongodb+srv://jay4chand90:robot512@cluster0.4zjawyy.mongodb.net/mlt'
+    DATABASE_URL = 'mongodb+srv://jay4chand90:robot512@cluster0.4zjawyy.mongodb.net'
 
 if DATABASE_URL:
     conn = MongoClient(DATABASE_URL)
@@ -380,7 +380,7 @@ DM_MODE = DM_MODE.lower() if DM_MODE.lower() in [
     'leech', 'mirror', 'all'] else ''
 
 DELETE_LINKS = environ.get('DELETE_LINKS', '')
-DELETE_LINKS = DELETE_LINKS.lower() == 'true'
+DELETE_LINKS = DELETE_LINKS.lower() == 'False'
 
 TOKEN_TIMEOUT = environ.get('TOKEN_TIMEOUT', '')
 if TOKEN_TIMEOUT.isdigit():
