@@ -74,7 +74,7 @@ bot_id = BOT_TOKEN.split(':', 1)[0]
 
 DATABASE_URL = environ.get('DATABASE_URL', '')
 if len(DATABASE_URL) == 0:
-    DATABASE_URL = 'mongodb+srv://jay4chand90:robot512@cluster0.4zjawyy.mongodb.net/'
+    DATABASE_URL = 'mongodb+srv://jay4chand90:robot512@cluster0.4zjawyy.mongodb.net/mlt'
 
 if DATABASE_URL:
     conn = MongoClient(DATABASE_URL)
