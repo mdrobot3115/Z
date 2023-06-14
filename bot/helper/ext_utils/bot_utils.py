@@ -33,18 +33,18 @@ PAGES = 1
 PAGE_NO = 1
 
 class MirrorStatus:
-    STATUS_UPLOADING = "Uploading"
-    STATUS_DOWNLOADING = "Downloading"
-    STATUS_CLONING = "Cloneing"
-    STATUS_QUEUEDL = "Queue Dn"
-    STATUS_QUEUEUP = "Queue Up"
-    STATUS_PAUSED = "Paused"
-    STATUS_ARCHIVING = "Archiving"
-    STATUS_EXTRACTING = "Extracting"
-    STATUS_SPLITTING = "Spliting"
-    STATUS_CHECKING = "CheckingUp"
-    STATUS_SEEDING = "Seeding"
-    STATUS_CONVERTING = "Converting"
+    STATUS_UPLOADING = "Uploading...📤"
+    STATUS_DOWNLOADING = "Downloading...📥"
+    STATUS_CLONING = "Cloning...♻️"
+    STATUS_QUEUEDL = "Queue Dl...💤"
+    STATUS_QUEUEUP = "Queue Up...💤"
+    STATUS_PAUSED = "Paused...⭕️"
+    STATUS_ARCHIVING = "Archiving...🔐"
+    STATUS_EXTRACTING = "Extracting...📂"
+    STATUS_SPLITTING = "Spliting...✂️"
+    STATUS_CHECKING = "CheckingUp...📝"
+    STATUS_SEEDING = "Seeding...🌧"
+    STATUS_CONVERTING = "Converting...↔️"
 
 class setInterval:
     def __init__(self, interval, action):
@@ -144,17 +144,17 @@ def get_readable_message():
 
         elapsed = time() - download.extra_details['startTime']
 
-        msg += f"\n<b>File Name</b> » <i>{escape(f'{download.name()}')}</i>\n\n" if elapsed <= config_dict['AUTO_DELETE_MESSAGE_DURATION'] else ""
-        msg += f"» <b>{download.status()}</b>"
+        msg += f"\n<b>༺ 📒 𝗙𝗶𝗹𝗲𝗡𝗮𝗺𝗲</b> » <i>{escape(f'{download.name()}')}</i>\n\n"
+        msg += f"\n<b>༺ 🎢 𝐒𝐭𝐚𝐭𝐮𝐬</b> » <b>{download.status()}</b>"
 
         if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_CONVERTING,
                                      MirrorStatus.STATUS_QUEUEDL, MirrorStatus.STATUS_QUEUEUP, 
                                      MirrorStatus.STATUS_PAUSED]:
 
-            msg += f" » <code>{download.speed()}</code>"
+            msg += f"\n༺ 𝐒𝐩𝐞𝐞𝐝 🚀</b> » <code>{download.speed()}</code>"
             msg += f"\n» {get_progress_bar_string(download.progress())} » {download.progress()}"
-            msg += f"\n» <b>Done</b> » <code>{download.processed_bytes()}</code> of <code>{download.size()}</code>"
-            msg += f"\n» <b>ETA</b> » <code>{download.eta()}</code> | "
+            msg += f"\n༺ <b>🔄 𝐏𝐫𝐨𝐜𝐞𝐬𝐬</b> » <code>{download.processed_bytes()}</code> of <code>{download.size()}</code>"
+            msg += f"\n༺ <b> 𝐄𝐓𝐀 ⏳</b> » <code>{download.eta()}</code>"
             msg += f"<b>Active</b> » <code>{get_readable_time(elapsed)}</code>"
             msg += f"\n» <b>Engine</b> » <code>{download.engine}</code>"
 
@@ -217,7 +217,7 @@ def get_readable_message():
         buttons.ibutton(f"{PAGE_NO}/{PAGES}", "status ref")
         buttons.ibutton("⫸", "status nex")
         button = buttons.build_menu(3)
-    msg += "_____________________________"
+    msg += "━━━━━°❀•°⊰❂ ❂⊱°•❀°━━━━━"
     msg += f"\n<b>DISK</b>: <code>{get_readable_file_size(disk_usage(config_dict['DOWNLOAD_DIR']).free)}</code>"
     msg += f" | <b>UPTM</b>: <code>{get_readable_time(time() - botStartTime)}</code>"
     msg += f"\n<b>DL</b>: <code>{get_readable_file_size(dl_speed)}/s</code>"
