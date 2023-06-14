@@ -103,7 +103,7 @@ async def stats(_, message):
             f'<b>▸ DISK:</b> <code>{get_progress_bar_string(disk)} {disk}%</code>\n' \
             f'<b>▸ Drive In Use:</b> <code>{used}</code> [{disk}%]\n' \
             f'<b>💾 Total:</b> <code>{total}</code> | <b>▸ Free:</b> <code>{free}</code>\n\n' \
-            f'<b>📤 Uploaded:</b> <code>{sent}</code>'
+            f'<b>📤 Uploaded:</b> <code>{sent}</code>\n' \
             f'<b>📥 Downloaded:</b> <code>{recv}</code>'
     reply_message = await sendMessage(message, stats)
     await auto_delete_message(message, reply_message)
