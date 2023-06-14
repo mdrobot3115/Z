@@ -145,7 +145,7 @@ def get_readable_message():
         elapsed = time() - download.extra_details['startTime']
 
         msg += f"\n<b>༺ 📒 𝗙𝗶𝗹𝗲𝗡𝗮𝗺𝗲</b> » <i>{escape(f'{download.name()}')}</i>\n\n"
-        msg += f"\n<b>༺ 🎢 𝐒𝐭𝐚𝐭𝐮𝐬</b> » <b>{download.status()}</b>"
+        msg += f"<b>༺ 🎢 𝐒𝐭𝐚𝐭𝐮𝐬</b> » <b>{download.status()}</b>"
 
         if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_CONVERTING,
                                      MirrorStatus.STATUS_QUEUEDL, MirrorStatus.STATUS_QUEUEUP, 
