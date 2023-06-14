@@ -70,39 +70,41 @@ async def stats(_, message):
     UMT = 'Unlimited' if config_dict['USER_MAX_TASKS'] == '' else config_dict['USER_MAX_TASKS']
     BMT = 'Unlimited' if config_dict['QUEUE_ALL'] == '' else config_dict['QUEUE_ALL']
 
-    stats = f'<b><i><u>Zee Bot Statistics</u></i></b>\n\n'\
-            f'<b><i><u>Repo Info</u></i></b>\n' \
-            f'<b>Updated:</b> <code>{last_commit}</code>\n' \
-            f'<b>Version:</b> <code>{version}</code>\n' \
-            f'<b>Change Log:</b> <code>{change_log}</code>\n\n' \
-            f'<b><i><u>Bot Info</u></i></b>\n' \
-            f'<b>SYS UPTM:</b> <code>{sysTime}</code>\n' \
-            f'<b>BOT UPTM:</b> <code>{botTime}</code>\n' \
-            f'<b>BOT Restart:</b> <code>{res_time}</code>\n\n' \
-            f'<b>CPU:</b> <code>{get_progress_bar_string(cpuUsage)} {cpuUsage}%</code>\n' \
-            f'<b>CPU Total Core(s):</b> <code>{cpu_count(logical=True)}</code>\n' \
-            f'<b>P-Core(s):</b> <code>{cpu_count(logical=False)}</code> | <b>V-Core(s):</b> <code>{v_core}</code>\n' \
-            f'<b>Frequency:</b> <code>{cpu_freq(percpu=False).current / 1000:.2f} GHz</code>\n\n' \
-            f'<b>RAM:</b> <code>{get_progress_bar_string(mem_p)} {mem_p}%</code>\n' \
-            f'<b>RAM In Use:</b> <code>{get_readable_file_size(memory.used)}</code> [{mem_p}%]\n' \
-            f'<b>Total:</b> <code>{get_readable_file_size(memory.total)}</code> | <b>Free:</b> <code>{get_readable_file_size(memory.available)}</code>\n\n' \
-            f'<b>SWAP:</b> <code>{get_progress_bar_string(swap.percent)} {swap.percent}%</code>\n' \
-            f'<b>SWAP In Use:</b> <code>{get_readable_file_size(swap.used)}</code> [{swap.percent}%]\n' \
-            f'<b>Allocated</b> <code>{get_readable_file_size(swap.total)}</code> | <b>Free:</b> <code>{get_readable_file_size(swap.free)}</code>\n\n' \
-            f'<b>DISK:</b> <code>{get_progress_bar_string(disk)} {disk}%</code>\n' \
-            f'<b>Drive In Use:</b> <code>{used}</code> [{disk}%]\n' \
-            f'<b>Total:</b> <code>{total}</code> | <b>Free:</b> <code>{free}</code>\n\n' \
-            f'<b>UL:</b> <code>{sent}</code> | <b>DL:</b> <code>{recv}</code>\n\n' \
-            f'<b><i><u>Bot Limits</u></i></b>\n' \
-            f'<code>Torrent   : {TOR}</code> <b>GB</b>\n' \
-            f'<code>G-Drive   : {GDL}</code> <b>GB</b>\n' \
-            f'<code>Yt-Dlp    : {YTD}</code> <b>GB</b>\n' \
-            f'<code>Direct    : {DIR}</code> <b>GB</b>\n' \
-            f'<code>Clone     : {CLL}</code> <b>GB</b>\n' \
-            f'<code>Leech     : {TGL}</code> <b>GB</b>\n' \
-            f'<code>MEGA      : {MGA}</code> <b>GB</b>\n' \
-            f'<code>User Tasks: {UMT}</code>\n' \
-            f'<code>Bot Tasks : {BMT}</code>'
+    stats = f'<b><i><u>📊 𝐓𝐆_𝐓𝐎𝐑𝐁𝐎𝐓𝐒 𝐒𝐭𝐚𝐭𝐢𝐬𝐭𝐢𝐜𝐬 📊</u></i></b>\n\n'\
+            f'<b><i><u>🧑‍💻 𝗥𝗲𝗽𝗼 𝗜𝗻𝗳𝗼</u></i></b>\n' \
+            f'<b>🎗️ Updated:</b> <code>{last_commit}</code>\n' \
+            f'<b>🆔 Version:</b> <code>{version}</code>\n' \
+            f'<b>📝 Change Log:</b> <code>{change_log}</code>\n\n' \
+            f'<b><i><u>🤖 𝗕𝗼𝘁 𝗜𝗻𝗳𝗼</u></i></b>\n' \
+            f'<b>☢️ OS Uptime:</b> <code>{sysTime}</code>\n' \
+            f'<b>⏰ Bot Uptime:</b> <code>{botTime}</code>\n' \
+            f'<b>🔄 Restarts In:</b> <code>{res_time}</code>\n\n' \
+            f'<b><i><u>❗️ 𝗟𝗶𝗺𝗶𝘁𝘀</u></i></b>\n' \
+            f'<code>🧲 Torrent   : {TOR}</code> <b>GB</b>\n' \
+            f'<code>☁️ G-Drive   : {GDL}</code> <b>GB</b>\n' \
+            f'<code>📺 Yt-Dlp    : {YTD}</code> <b>GB</b>\n' \
+            f'<code>🔗 Direct    : {DIR}</code> <b>GB</b>\n' \
+            f'<code>♻️ Clone     : {CLL}</code> <b>GB</b>\n' \
+            f'<code>📂 Leech     : {TGL}</code> <b>GB</b>\n' \
+            f'<code>Ⓜ️ MEGA      : {MGA}</code> <b>GB</b>\n' \
+            f'<code>👤 User Tasks: {UMT}</code>\n' \
+            f'<code>🚧 Bot Tasks : {BMT}</code>\n\n' \
+            f'<b><i><u>🛠 𝗦𝗲𝗿𝘃𝗲𝗿 𝗜𝗻𝗳𝗼</u></i></b>\n' \
+            f'<b>🖥️ CPU:</b> <code>{get_progress_bar_string(cpuUsage)} {cpuUsage}%</code>\n' \
+            f'<b>▸ CPU Total Core(s):</b> <code>{cpu_count(logical=True)}</code>\n' \
+            f'<b>▸ P-Core(s):</b> <code>{cpu_count(logical=False)}</code> | <b>▸ V-Core(s):</b> <code>{v_core}</code>\n' \
+            f'<b>▸ Frequency:</b> <code>{cpu_freq(percpu=False).current / 1000:.2f} GHz</code>\n\n' \
+            f'<b>▸ RAM:</b> <code>{get_progress_bar_string(mem_p)} {mem_p}%</code>\n' \
+            f'<b>▸ RAM In Use:</b> <code>{get_readable_file_size(memory.used)}</code> [{mem_p}%]\n' \
+            f'<b>💾 Total:</b> <code>{get_readable_file_size(memory.total)}</code> | <b>▸ Free:</b> <code>{get_readable_file_size(memory.available)}</code>\n\n' \
+            f'<b>▸ SWAP:</b> <code>{get_progress_bar_string(swap.percent)} {swap.percent}%</code>\n' \
+            f'<b>▸ SWAP In Use:</b> <code>{get_readable_file_size(swap.used)}</code> [{swap.percent}%]\n' \
+            f'<b>▸ Allocated</b> <code>{get_readable_file_size(swap.total)}</code> | <b>▸ Free:</b> <code>{get_readable_file_size(swap.free)}</code>\n\n' \
+            f'<b>▸ DISK:</b> <code>{get_progress_bar_string(disk)} {disk}%</code>\n' \
+            f'<b>▸ Drive In Use:</b> <code>{used}</code> [{disk}%]\n' \
+            f'<b>💾 Total:</b> <code>{total}</code> | <b>▸ Free:</b> <code>{free}</code>\n\n' \
+            f'<b>📤 Uploaded:</b> <code>{sent}</code>'
+            f'<b>📥 Downloaded:</b> <code>{recv}</code>'
     reply_message = await sendMessage(message, stats)
     await auto_delete_message(message, reply_message)
 
@@ -123,18 +125,14 @@ async def start(_, message):
         msg += f'Validity: {get_readable_time(int(config_dict["TOKEN_TIMEOUT"]))}'
         return await sendMessage(message, msg)
     elif config_dict['DM_MODE']:
-        start_string = 'Bot Started.\n' \
-                       'Now I can send your stuff here.\n' \
-                       'Use me here'
+        start_string = '😎 𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝.\n'
     else:
-        start_string = 'Sorry, you cant use me here!\n' \
-                       'use me.\n' \
-                       'Thank You'
+        start_string = 'Sorry, you cant use me here!\n'
     await sendMessage(message, start_string)
 
 
 async def restart(_, message):
-    restart_message = await sendMessage(message, "Restarting...")
+    restart_message = await sendMessage(message, "😎 𝐑𝐞𝐬𝐭𝐚𝐫𝐭𝐞𝐝 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲...❗")
     if scheduler.running:
         scheduler.shutdown(wait=False)
     for interval in [QbInterval, Interval]:
