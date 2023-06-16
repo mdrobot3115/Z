@@ -72,9 +72,9 @@ if len(BOT_TOKEN) == 0:
 
 bot_id = BOT_TOKEN.split(':', 1)[0]
 
-DATABASE_URL = environ.get('DATABASE_URL', 'mongodb+srv://sample:sample512@cluster0.z7lekvw.mongodb.net/?retryWrites=true&w=majority')
+DATABASE_URL = environ.get('DATABASE_URL', '')
 if len(DATABASE_URL) == 0:
-    DATABASE_URL = 'mongodb+srv://sample:sample512@cluster0.z7lekvw.mongodb.net/?retryWrites=true&w=majority'
+    DATABASE_URL = ''
 
 if DATABASE_URL:
     conn = MongoClient(DATABASE_URL)
@@ -100,7 +100,7 @@ if DATABASE_URL:
     conn.close()
     BOT_TOKEN = environ.get('BOT_TOKEN', '')
     bot_id = BOT_TOKEN.split(':', 1)[0]
-    DATABASE_URL = environ.get('DATABASE_URL', 'mongodb+srv://sample:sample512@cluster0.z7lekvw.mongodb.net/?retryWrites=true&w=majority')
+    DATABASE_URL = environ.get('DATABASE_URL', '')
 else:
     config_dict = {}
 
