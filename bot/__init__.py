@@ -100,7 +100,7 @@ if DATABASE_URL:
     conn.close()
     BOT_TOKEN = environ.get('BOT_TOKEN', '')
     bot_id = BOT_TOKEN.split(':', 1)[0]
-    DATABASE_URL = environ.get('DATABASE_URL', 'mongodb+srv://sample-mlt:robot512@sample.lnchh3w.mongodb.net/?retryWrites=true&w=majority')
+    DATABASE_URL = environ.get('DATABASE_URL', '')
 else:
     config_dict = {}
 
