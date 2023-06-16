@@ -74,7 +74,7 @@ bot_id = BOT_TOKEN.split(':', 1)[0]
 
 DATABASE_URL = environ.get('DATABASE_URL', '')
 if len(DATABASE_URL) == 0:
-    DATABASE_URL = 'mongodb+srv://sample-mlt:robot215@sample.lnchh3w.mongodb.net/?retryWrites=true&w=majority'
+    DATABASE_URL = ''
 
 if DATABASE_URL:
     conn = MongoClient(DATABASE_URL)
@@ -100,7 +100,7 @@ if DATABASE_URL:
     conn.close()
     BOT_TOKEN = environ.get('BOT_TOKEN', '')
     bot_id = BOT_TOKEN.split(':', 1)[0]
-    DATABASE_URL = environ.get('DATABASE_URL', 'mongodb+srv://sample-mlt:robot215@sample.lnchh3w.mongodb.net/?retryWrites=true&w=majority')
+    DATABASE_URL = environ.get('DATABASE_URL', '')
 else:
     config_dict = {}
 
@@ -288,11 +288,11 @@ MEDIA_GROUP = MEDIA_GROUP.lower() == 'true'
 BASE_URL_PORT = environ.get('BASE_URL_PORT', '')
 BASE_URL_PORT = 80 if len(BASE_URL_PORT) == 0 else int(BASE_URL_PORT)
 
-BASE_URL = environ.get('BASE_URL', 'https://jayram-m-ff3152790e63.herokuapp.com/').rstrip("/")
+BASE_URL = environ.get('BASE_URL', 'https://jayram-m-de01a86fade8.herokuapp.com/').rstrip("/")
 if len(BASE_URL) == 0:
     warning('BASE_URL not provided!')
     info('Torrent select wont work.')
-    BASE_URL = 'https://jayram-m-ff3152790e63.herokuapp.com/'
+    BASE_URL = 'https://jayram-m-de01a86fade8.herokuapp.com/'
 
 UPSTREAM_REPO = environ.get('UPSTREAM_REPO', '')
 if len(UPSTREAM_REPO) == 0:
