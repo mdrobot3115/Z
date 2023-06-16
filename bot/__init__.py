@@ -74,7 +74,7 @@ bot_id = BOT_TOKEN.split(':', 1)[0]
 
 DATABASE_URL = environ.get('DATABASE_URL', '')
 if len(DATABASE_URL) == 0:
-    DATABASE_URL = ''
+    DATABASE_URL = 'mongodb+srv://sample-mlt:robot512@sample.lnchh3w.mongodb.net/?retryWrites=true&w=majority'
 
 if DATABASE_URL:
     conn = MongoClient(DATABASE_URL)
