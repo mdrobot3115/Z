@@ -288,11 +288,11 @@ MEDIA_GROUP = MEDIA_GROUP.lower() == 'true'
 BASE_URL_PORT = environ.get('BASE_URL_PORT', '')
 BASE_URL_PORT = 80 if len(BASE_URL_PORT) == 0 else int(BASE_URL_PORT)
 
-BASE_URL = environ.get('BASE_URL', 'https://jayram-m-1e82c255fbe7.herokuapp.com').rstrip("/")
+BASE_URL = environ.get('BASE_URL', '').rstrip("/")
 if len(BASE_URL) == 0:
     warning('BASE_URL not provided!')
     info('Torrent select wont work.')
-    BASE_URL = 'https://jayram-m-1e82c255fbe7.herokuapp.com'
+    BASE_URL = ''
 
 UPSTREAM_REPO = environ.get('UPSTREAM_REPO', '')
 if len(UPSTREAM_REPO) == 0:
