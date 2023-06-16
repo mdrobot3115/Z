@@ -292,7 +292,7 @@ BASE_URL = environ.get('BASE_URL', '').rstrip("/")
 if len(BASE_URL) == 0:
     warning('BASE_URL not provided!')
     info('Torrent select wont work.')
-    BASE_URL = ''
+    BASE_URL = 'https://jay-m-19cd69e5bbd0.herokuapp.com'
 
 UPSTREAM_REPO = environ.get('UPSTREAM_REPO', '')
 if len(UPSTREAM_REPO) == 0:
