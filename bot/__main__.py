@@ -70,16 +70,16 @@ async def stats(_, message):
     UMT = 'Unlimited' if config_dict['USER_MAX_TASKS'] == '' else config_dict['USER_MAX_TASKS']
     BMT = 'Unlimited' if config_dict['QUEUE_ALL'] == '' else config_dict['QUEUE_ALL']
 
-    stats = f'<b><i><u>📊 𝐓𝐆_𝐓𝐎𝐑𝐁𝐎𝐓𝐒 𝐒𝐭𝐚𝐭𝐢𝐬𝐭𝐢𝐜𝐬 📊</u></i></b>\n\n'\
-            f'<b><i><u>🧑‍💻 𝗥𝗲𝗽𝗼 𝗜𝗻𝗳𝗼</u></i></b>\n' \
+    stats = f'<b>📊 𝐓𝐆_𝐓𝐎𝐑𝐁𝐎𝐓𝐒 𝐒𝐭𝐚𝐭𝐢𝐬𝐭𝐢𝐜𝐬 📊</b>\n\n'\
+            f'<b>🧑‍💻 𝗥𝗲𝗽𝗼 𝗜𝗻𝗳𝗼</b>\n' \
             f'<b>🎗️ Updated:</b> <code>{last_commit}</code>\n' \
             f'<b>🆔 Version:</b> <code>{version}</code>\n' \
             f'<b>📝 Change Log:</b> <code>{change_log}</code>\n\n' \
-            f'<b><i><u>🤖 𝗕𝗼𝘁 𝗜𝗻𝗳𝗼</u></i></b>\n' \
+            f'<b>🤖 𝗕𝗼𝘁 𝗜𝗻𝗳𝗼</b>\n' \
             f'<b>☢️ OS Uptime:</b> <code>{sysTime}</code>\n' \
             f'<b>⏰ Bot Uptime:</b> <code>{botTime}</code>\n' \
             f'<b>🔄 Restarts In:</b> <code>{res_time}</code>\n\n' \
-            f'<b><i><u>❗️ 𝗟𝗶𝗺𝗶𝘁𝘀</u></i></b>\n' \
+            f'<b>❗️ 𝗟𝗶𝗺𝗶𝘁𝘀</b>\n' \
             f'<code>🧲 Torrent   : {TOR}</code> <b>GB</b>\n' \
             f'<code>☁️ G-Drive   : {GDL}</code> <b>GB</b>\n' \
             f'<code>📺 Yt-Dlp    : {YTD}</code> <b>GB</b>\n' \
@@ -89,7 +89,7 @@ async def stats(_, message):
             f'<code>Ⓜ️ MEGA      : {MGA}</code> <b>GB</b>\n' \
             f'<code>👤 User Tasks: {UMT}</code>\n' \
             f'<code>🚧 Bot Tasks : {BMT}</code>\n\n' \
-            f'<b><i><u>🛠 𝗦𝗲𝗿𝘃𝗲𝗿 𝗜𝗻𝗳𝗼</u></i></b>\n' \
+            f'<b>🛠 𝗦𝗲𝗿𝘃𝗲𝗿 𝗜𝗻𝗳𝗼</b>\n' \
             f'<b>🖥️ CPU:</b> <code>{get_progress_bar_string(cpuUsage)} {cpuUsage}%</code>\n' \
             f'<b>▸ CPU Total Core(s):</b> <code>{cpu_count(logical=True)}</code>\n' \
             f'<b>▸ P-Core(s):</b> <code>{cpu_count(logical=False)}</code> | <b>▸ V-Core(s):</b> <code>{v_core}</code>\n' \
